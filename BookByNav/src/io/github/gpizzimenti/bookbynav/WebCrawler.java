@@ -45,14 +45,9 @@ public class WebCrawler {
         
     }
     
-
-    /**
-     * @param pages
-     *************************************************************************/ 
-    
     public  LinkedList<Page> run() {
 
-        LinkedList<Page> pages = new LinkedList<Page>();
+        LinkedList<Page> pages = new LinkedList<>();
 
         try {
                 logger.info("{}",DateUtils.now() + " : STARTED");
