@@ -19,8 +19,8 @@ bookbynav.exe \-\-folder="C:\LiferayDocs" \-\-startUrl="https://dev.liferay.com/
 |  articleSelector | N  |  the pseudo-CSS rule selecting the container element of the main content | "BODY" |
 | ulSelector  |   N | the pseudo-CSS rule selecting the list element  | "> UL"  |
 |  liSelector | N   |  the pseudo-CSS rule selecting the children elements of the list  |   "> LI" |
-|  removeSelectors |N   | the comma-separated list of  pseudo-CSS rules filter out elements of the page   |   |
-| preserveClasses  | N  | the comma-separated list of  class names that will be NOT stripped away  |   |
+|  removeSelectors |N   | the comma-separated list of pseudo-CSS rules to filter out elements of the page   |   |
+| preserveClasses  | N  | the comma-separated list of class names that will be NOT stripped away  |   |
 | activeMenuSelector  |N   | the pseudo-CSS rule selecting the LI (or A child)  currently selected in the navigation; if not provided, the navigation  & structure of the documentation will be recursively inferred from the gerarchy of the lists (es: UL --> Li --> UL --> LI ....)  |   |
 |  userAgent |  N | the user agent string used for web crawling  |  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36" |
 | charset  | N  |  character set used to retrieve content & produce the EPUB | "UTF-8"  |
@@ -32,7 +32,7 @@ bookbynav.exe \-\-folder="C:\LiferayDocs" \-\-startUrl="https://dev.liferay.com/
 
 The .EXE can be downloaded from [here][1], and it's been built with [Launch4j][2].
 
-If you wanna rebuild it, you must edit [launch4j.xml][3] & the *makeexe* task in [build-impl.xml][4] with your local paths 
+If you want to rebuild it, you must edit [launch4j.xml][3] & the *makeexe* task in [build-impl.xml][4] with your local paths 
 
 [1]: https://github.com/gpizzimenti/BookByNav/blob/master/BookByNav/exe/bookbynav.exe "bookbynav.exe - 13.5 Mb"
 [2]: http://launch4j.sourceforge.net/ "Go to Launch4j homepage"
