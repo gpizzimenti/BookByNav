@@ -9,7 +9,7 @@ bookbynav.exe \-\-folder="C:\LiferayDocs" \-\-startUrl="https://dev.liferay.com/
 
 ## Parameters
 
-| PARAM  |REQUIRED   |DESCRIPTION   |DEFAULT   |
+| NAME  |REQUIRED   |DESCRIPTION   |DEFAULT   |
 | ------------ | ------------ | ------------ | ------------ |
 |   startUrl|  Y |the starting URL for the web crawler    |   |
 |  navigationSelector |Y   |the pseudo-CSS rule selecting the container element  of the navigation, structured in a gerarchy of  OL/UL -> LI -> A )  |   |
