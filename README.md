@@ -20,7 +20,7 @@ bookbynav.exe \-\-folder="C:\LiferayDocs" \-\-startUrl="https://dev.liferay.com/
 |  removeSelectors |N   | the comma-separated list of  pseudo-CSS rules filter out elements of the page   |   |
 | preserveClasses  | N  | the comma-separated list of  class names that will be NOT stripped away  |   |
 | activeMenuSelector  |N   | the pseudo-CSS rule selecting the LI (or A child)  currently selected in the navigation; if not provided, the navigation  & structure of the documentation will be recursively inferred from the gerarchy of the lists (es: UL --> Li --> UL --> LI ....)  |   |
-|  userAgent |  N | the user agent string used for web crawling  |  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36 |
+|  userAgent |  N | the user agent string used for web crawling  |  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36" |
 | charset  | N  |  character set used to retrieve content & produce the EPUB | "UTF-8"  |
 |  baseUri | N  | force the base path used by the web crawler for relative links   | BASE path of the retrieved page   |
 | verboseLog  | N   |  if "yes", will log every operation|  "no"  |
