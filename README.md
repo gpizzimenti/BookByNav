@@ -1,5 +1,7 @@
 # BookByNav
-A (very basic & rough) command-line utility to create an EPUB from online documentation written in Java.
+A (very basic & rough) command-line utility to create an EPUB from online documentation, written in Java.
+
+The structure of the EPUB is inferred from the navigation menu, assuming a UL/OL --> LI --> A basic structure
 
 ## Example
 
