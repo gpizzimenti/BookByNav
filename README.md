@@ -3,13 +3,13 @@ A (very basic & rough) command-line utility to create an EPUB from online docume
 
 The structure of the EPUB is inferred from the navigation menu, assuming a UL/OL --> LI --> A basic structure
 
-## Example
+## Usage example
 
 bookbynav.exe \-\-folder="C:\LiferayDocs" \-\-startUrl="https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-development" \-\-navigationSelector=".kbarticle-navigation" \-\-articleSelector=".kb-article-container" \-\-activeMenuSelector=".kbarticle-selected" \-\-removeSelectors="head,script,#banner,#footer,.kb-article-tools,.kb-article-siblings,.taglib-social-bookmarks,.taglib-ratings" \-\-preserveClasses=".kb-elements" \-\-verboseLog="yes"  \-\-bookTitle="Liferay 7.0 Tutorial" \-\-bookName="LiferayTutorial70"
 
 ## Parameters
 
-| PARAM  |REQUIRED   |DESCR   |DEFAULT   |
+| PARAM  |REQUIRED   |DESCRIPTION   |DEFAULT   |
 | ------------ | ------------ | ------------ | ------------ |
 |   startUrl|  Y |the starting URL for the web crawler    |   |
 |  navigationSelector |Y   |the pseudo-CSS rule selecting the containerelement  of the navigation, structured in a gerarchy of  OL/UL -> LI -> A )  |   |
