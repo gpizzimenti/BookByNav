@@ -6,11 +6,9 @@ package io.github.gpizzimenti.bookbynav.utils;
  */
 
 import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import org.apache.commons.io.FileUtils;
-import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -87,6 +85,7 @@ public class HttpUtils {
         }
 
         httpGet.releaseConnection();    
+        
     } catch (Exception e) {
             doc = null;
     }
