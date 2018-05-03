@@ -6,6 +6,8 @@ package io.github.gpizzimenti.bookbynav.utils;
  */
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpEntity;
@@ -18,60 +20,78 @@ import org.jsoup.nodes.Document;
 
 public class HttpUtils {
     
-    public static boolean saveFile(URL url, File file, String UA) {
+    
+  /**
+     * @param url*
+     * @param file*
+     * @param UA*
+     * @return 
+     * @throws java.lang.Exception***********************************************************************/
+    
+  public static boolean saveFile(URL url, File file, String UA) throws Exception{
 
     boolean isSucceed = true;
 
-    CloseableHttpClient httpClient = HttpClients
-                                        .custom()
-                                        .setUserAgent(UA)
-                                        .build();
+    try (CloseableHttpClient httpClient = HttpClients
+                                                .custom()
+                                                .setUserAgent(UA)
+                                                .build()) {
+    
+        HttpGet httpGet = new HttpGet(url.toString());
 
-    HttpGet httpGet = new HttpGet(url.toString());
 
-    try {
-        CloseableHttpResponse httpResponse = httpClient.execute(httpGet);
-        HttpEntity entity = httpResponse.getEntity();
+        try (CloseableHttpResponse httpResponse = httpClient.execute(httpGet);
+             InputStream is = (httpResponse.getEntity()!=null ? httpResponse.getEntity().getContent() : null)) {
 
-        if (entity != null) {
-            FileUtils.copyInputStreamToFile(entity.getContent(), file);
+             FileUtils.copyInputStreamToFile(is, file);
+     
+        } catch (Exception e) {
+            isSucceed = false;
         }
-
+     
+        httpGet.releaseConnection();
+        
     } catch (Exception e) {
         isSucceed = false;
     }
 
-    httpGet.releaseConnection();
-
     return isSucceed;
- }
+   }
+
     
-public static Document getDocument(URL url, String UA, String charset, String baseUri) {
+  /**
+     * @param url*
+     * @param UA*
+     * @param charset*
+     * @param baseUri*
+     * @return **********************************************************************/
+  
+  public static Document getDocument(URL url, String UA, String charset, String baseUri)  {
     
     Document doc= null;
     
-    CloseableHttpClient httpClient = HttpClients
-                                    .custom()
-                                    .setUserAgent(UA)
-                                    .build();
+    try (CloseableHttpClient httpClient = HttpClients
+                                                .custom()
+                                                .setUserAgent(UA)
+                                                .build()) {
     
-    HttpGet httpGet = new HttpGet(url.toString());
-    
-    try {
-        CloseableHttpResponse httpResponse = httpClient.execute(httpGet);
-        HttpEntity entity = httpResponse.getEntity();
+        HttpGet httpGet = new HttpGet(url.toString());
 
-        if (entity != null) {
-            doc= Jsoup.parse(entity.getContent(), charset, baseUri);
+        try (CloseableHttpResponse httpResponse = httpClient.execute(httpGet);
+             InputStream is = (httpResponse.getEntity()!=null ? httpResponse.getEntity().getContent() : null)) {
+
+             doc= Jsoup.parse(is, charset, baseUri);
+
+        } catch (Exception e) {
+            doc = null;
         }
 
+        httpGet.releaseConnection();    
     } catch (Exception e) {
-        doc = null;
+            doc = null;
     }
-
-    httpGet.releaseConnection();    
     
     return doc;
-}   
+ }   
     
 }
