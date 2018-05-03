@@ -32,7 +32,7 @@ bookbynav.exe \-\-folder="C:\LiferayDocs" \-\-startUrl="https://dev.liferay.com/
 
 The .EXE can be downloaded from [here][1], and it's been built with [Launch4j][2].
 
-If you want to rebuild it, you must edit [launch4j.xml][3] & the *makeexe* task in [build-impl.xml][4] with your local paths 
+If you want to rebuild it, you must edit [launch4j.xml][3] & the *makeexe* Ant task in [build-impl.xml][4] with your local paths 
 
 [1]: https://github.com/gpizzimenti/BookByNav/blob/master/BookByNav/exe/bookbynav.exe "bookbynav.exe - 13.5 Mb"
 [2]: http://launch4j.sourceforge.net/ "Go to Launch4j homepage"
