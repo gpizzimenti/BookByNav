@@ -159,9 +159,11 @@ public class WebCrawler {
 
                 Element navigation = doc.selectFirst(cfg.getNavigationSelector());
                 selectedMenu = navigation.selectFirst(cfg.getActiveMenuSelector());
-                if (selectedMenu.is("a")) selectedMenu = selectedMenu.parent(); //... and let's start the process with the <li>
-                if (!selectedMenu.is("li")) selectedMenu = null; 
                 
+                if (selectedMenu != null) { 
+                    if (selectedMenu.is("a")) selectedMenu = selectedMenu.parent(); //... and let's start the process with the <li>
+                    if (!selectedMenu.is("li")) selectedMenu = null; 
+                }
              }             
              
             Elements article =  doc.select(cfg.getArticleSelector());
@@ -230,17 +232,18 @@ public class WebCrawler {
     private Document preserveClasses(Document document) {        
         Document doc = document;
         
-        try {
-            
-            for (String selector : cfg.getPreserveClasses()) {
-                Elements els = doc.select(selector);
-                els.attr("preserve-class", selector);
-            }
-        } 
-        catch (Exception exc) {
-          logger.error("{}",ExceptionUtils.getCallerMethodAndError(exc));
-        }    
-        
+        if (cfg.getPreserveClasses() != null) {
+            try {
+
+                for (String selector : cfg.getPreserveClasses()) {
+                    Elements els = doc.select(selector);
+                    els.attr("preserve-class", selector);
+                }
+            } 
+            catch (Exception exc) {
+              logger.error("{}",ExceptionUtils.getCallerMethodAndError(exc));
+            }    
+        }            
         return doc;
     }     
     
