@@ -10,22 +10,22 @@ bookbynav.exe \-\-folder="C:\LiferayDocs" \-\-startUrl="https://dev.liferay.com/
 ## Parameters
 
 | NAME  |REQUIRED   |DESCRIPTION   |DEFAULT   |
-| ------------ | ------------ | ------------ | ------------ |
-|   startUrl|  Y |the starting URL for the web crawler    |   |
-|  navigationSelector |Y   |the pseudo-CSS rule selecting the container element  of the navigation, structured in a gerarchy of  OL/UL -> LI -> A )  |   |
-|  folder |N |the folder where the EPUB will be produced     | executable's location   |
-|  bookName |N   | the name of the EPUB   | startUrl's hostname  |
-|  bookTitle | N  | the descriptive title of the EPUB   |   startUrl's hostname |
-|  articleSelector | N  |  the pseudo-CSS rule selecting the container element of the main content | "BODY" |
-| ulSelector  |   N | the pseudo-CSS rule selecting the list element  | "> UL"  |
-|  liSelector | N   |  the pseudo-CSS rule selecting the children elements of the list  |   "> LI" |
-|  removeSelectors |N   | the comma-separated list of pseudo-CSS rules to filter out elements of the page   |   |
-| preserveClasses  | N  | the comma-separated list of class names that will be NOT stripped away  |   |
-| activeMenuSelector  |N   | the pseudo-CSS rule selecting the LI (or A child)  currently selected in the navigation; if not provided, the navigation  & structure of the documentation will be recursively inferred from the gerarchy of the lists (es: UL --> Li --> UL --> LI ....)  |   |
-|  userAgent |  N | the user agent string used for web crawling  |  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36" |
-| charset  | N  |  character set used to retrieve content & produce the EPUB | "UTF-8"  |
-|  baseUri | N  | force the base path used by the web crawler for relative links   | BASE path of the retrieved page   |
-| verboseLog  | N   |  if "yes", will log every operation|  "no"  |
+| ------------ | :---: | ------------ | ------------ |
+|   startUrl|  YES |the starting URL for the web crawler    |   |
+|  navigationSelector |YES   |the pseudo-CSS rule selecting the container element  of the navigation, structured in a gerarchy of  OL/UL -> LI -> A )  |   |
+|  folder |NO |the folder where the EPUB will be produced     | executable's location   |
+|  bookName |NO   | the name of the EPUB   | startUrl's hostname  |
+|  bookTitle | NO  | the descriptive title of the EPUB   |   startUrl's hostname |
+|  articleSelector | NO  |  the pseudo-CSS rule selecting the container element of the main content | "BODY" |
+| ulSelector  |   NO | the pseudo-CSS rule selecting the list element  | "> UL"  |
+|  liSelector | NO   |  the pseudo-CSS rule selecting the children elements of the list  |   "> LI" |
+|  removeSelectors |NO   | the comma-separated list of pseudo-CSS rules to filter out elements of the page   |   |
+| preserveClasses  | NO  | the comma-separated list of class names that will be NOT stripped away  |   |
+| activeMenuSelector  |NO   | the pseudo-CSS rule selecting the LI (or A child)  currently selected in the navigation; if not provided, the navigation  & structure of the documentation will be recursively inferred from the gerarchy of the lists (es: UL --> Li --> UL --> LI ....)  |   |
+|  userAgent |  NO | the user agent string used for web crawling  |  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36" |
+| charset  | NO  |  character set used to retrieve content & produce the EPUB | "UTF-8"  |
+|  baseUri | NO  | force the base path used by the web crawler for relative links   | BASE path of the retrieved page   |
+| verboseLog  | NO   |  if "yes", will log every operation|  "no"  |
 
 
 ## .EXE download & creation
