@@ -3,7 +3,9 @@ A (very basic & rough) command-line utility to create an EPUB from online docume
 
 The structure of the EPUB is inferred from the navigation menu, assuming a UL/OL --> LI --> A basic structure
 
-## Usage example
+## Usage examples (as tested May 04,2018)
+
+bookbynav.exe \-\-folder="C:\VueXDocs" \-\-startUrl="https://vuex.vuejs.org/en/" \-\-navigationSelector="nav[role='navigation']" \-\-articleSelector=".page-inner" \-\-liSelector="> li.chapter" \-\-removeSelectors="head,script,.search-results" \-\-verboseLog="yes" \-\-bookTitle="VueX Guide" \-\-bookName="VueX Guide"
 
 bookbynav.exe \-\-folder="C:\LiferayDocs" \-\-startUrl="https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-development" \-\-navigationSelector=".kbarticle-navigation" \-\-articleSelector=".kb-article-container" \-\-activeMenuSelector=".kbarticle-selected" \-\-removeSelectors="head,script,#banner,#footer,.kb-article-tools,.kb-article-siblings,.taglib-social-bookmarks,.taglib-ratings" \-\-preserveClasses=".kb-elements" \-\-verboseLog="yes"  \-\-bookTitle="Liferay 7.0 Tutorial" \-\-bookName="LiferayTutorial70"
 
